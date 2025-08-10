@@ -1,7 +1,22 @@
 import tkinter as tk
 from tkinter.filedialog import askopenfilename, asksaveasfilename
 
+
 # functions......................
+# Function: Create a new file
+def new_file():
+    global current_file
+    if text_edit.get(1.0, tk.END).strip():
+        answer = messagebox.askyesnocancel("Save", "Do you want to save changes?")
+        if answer:  # Save before new
+            save_file()
+        elif answer is None:  # Cancel
+            return
+    text_edit.delete(1.0, tk.END)
+    current_file = None
+    root.title("MY NOTEPAD - New File")
+
+
 def save_file():
     file_location = asksaveasfilename(
         defaultextension=".txt",
