@@ -54,20 +54,25 @@ def open_file():
         text_edit.insert(tk.END, text)
     root.title(f"MY NOTEPAD - {file_location}")
 
-
 # undo funtion
 def undo_text():
     text_edit.edit_undo()
-
 
 # redo function
 def redo_text():
     text_edit.edit_redo()
 
-
 # copy function
 def copy_text():
     text_edit.event_generate("<<Copy>>")
+
+# past function
+def paste_text():
+    text_edit.event_generate("<<Paste>>")
+
+# cut function
+def cut_text():
+    text_edit.event_generate("<<Cut>>")
 
 
 root = tk.Tk()
