@@ -1,6 +1,6 @@
 import tkinter as tk
+from tkinter import messagebox, simpledialog, colorchooser, font
 from tkinter.filedialog import askopenfilename, asksaveasfilename
-
 
 # functions......................
 # Function: Create a new file
