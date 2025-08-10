@@ -86,6 +86,17 @@ def update_status_bar(event=None):
     row, col = text_edit.index(tk.INSERT).split(".")
     status_bar.config(text=f"Line: {row} | Column: {col}")
 
+
+def search_replace():
+    search_word = simpledialog.askstring("Search", "Enter text to search:")
+    replace_word = simpledialog.askstring("Replace", "Enter replacement text:")
+    if search_word and replace_word is not None:
+        content = text_edit.get(1.0, tk.END)
+        new_content = content.replace(search_word, replace_word)
+        text_edit.delete(1.0, tk.END)
+        text_edit.insert(tk.END, new_content)
+
+
 root = tk.Tk()
 root.title("MY NOTEPAD")
 root.rowconfigure(0, minsize=800)
