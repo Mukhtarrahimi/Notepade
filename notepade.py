@@ -9,9 +9,10 @@ def saveing_file():
     )
     if not file_location:
         return
-    
-
-
+    with open(file_location, "w") as file_output:
+        text = text_edit.get(1.0, tk.END)
+        file_output.write(text)
+    root.title(f"MY NOTEPAD - {file_location}")
 
 
 root = tk.Tk()
