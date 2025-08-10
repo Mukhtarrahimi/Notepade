@@ -75,6 +75,13 @@ def cut_text():
     text_edit.event_generate("<<Cut>>")
 
 
+def select_font():
+    font_name = simpledialog.askstring("Font", "Enter font family (e.g., Arial):")
+    font_size = simpledialog.askinteger("Font Size", "Enter font size:")
+    if font_name and font_size:
+        text_edit.config(font=(font_name, font_size))
+
+
 root = tk.Tk()
 root.title("MY NOTEPAD")
 root.rowconfigure(0, minsize=800)
