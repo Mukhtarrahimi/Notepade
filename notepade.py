@@ -3,13 +3,13 @@ from tkinter.filedialog import askopenfilename, asksaveasfilename
 
 # functions......................
 def save_file():
-    file_location = askopenfilename(
+    file_location = asksaveasfilename(
         defaultextension=".txt",
-        filetypes = [("Text files", "*.txt"), ("All files", "*.*")]
+        filetypes=[("Text files", "*.txt"), ("All files", "*.*")],
     )
     if not file_location:
         return
-    with open(file_location, "w") as file_output:
+    with open(file_location, "w", encoding = "utf - 8") as file_output:
         text = text_edit.get(1.0, tk.END)
         file_output.write(text)
     root.title(f"MY NOTEPAD - {file_location}")
@@ -21,11 +21,11 @@ def open_file():
     if not file_location:
         return
     text_edit.delete(1.0, tk.END)
-    with open(file_location, "r") as file_input:
+    with open(file_location, "r", encoding = "utf-8") as file_input:
         text = file_input.read()
         text_edit.insert(tk.END, text)
     root.title(f"MY NOTEPAD - {file_location}")
-        
+
 
 root = tk.Tk()
 root.title("MY NOTEPAD")
