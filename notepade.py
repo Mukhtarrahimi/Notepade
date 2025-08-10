@@ -15,6 +15,17 @@ def saveing_file():
     root.title(f"MY NOTEPAD - {file_location}")
 
 
+def open_file():
+    file_location = askopenfilename(
+        filetypes=[("Text files", ".txt"), ("All files", "*.*")]
+    if not file_location:
+        return
+    
+        
+        
+        
+        
+        
 root = tk.Tk()
 root.title("MY NOTEPAD")
 root.rowconfigure(0, minsize=800)
