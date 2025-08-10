@@ -82,6 +82,10 @@ def select_font():
         text_edit.config(font=(font_name, font_size))
 
 
+def update_status_bar(event=None):
+    row, col = text_edit.index(tk.INSERT).split(".")
+    status_bar.config(text=f"Line: {row} | Column: {col}")
+
 root = tk.Tk()
 root.title("MY NOTEPAD")
 root.rowconfigure(0, minsize=800)
