@@ -2,7 +2,7 @@ import tkinter as tk
 from tkinter.filedialog import askopenfilename, asksaveasfilename
 
 # functions......................
-def saveing_file():
+def save_file():
     file_location = askopenfilename(
         defaultextension=".txt",
         filetypes = [("Text files", "*.txt"), ("All files", "*.*")]
@@ -38,10 +38,10 @@ text_edit.grid(row=0, column=1, sticky="nsew")
 frame_button = tk.Frame(root, relief=tk.RAISED, bd=3)
 frame_button.grid(row=0, column=0, sticky="ns")
 
-button_open = tk.Button(frame_button, text="open file")
+button_open = tk.Button(frame_button, text="open file", command=open_file)
 button_open.grid(row=0, column=0, padx=5, pady=5)
 
-button_save = tk.Button(frame_button, text="save file")
+button_save = tk.Button(frame_button, text="save file", command=save_file)
 button_save.grid(row=1, column=0, padx=5, pady=5)
 
 root.mainloop()
