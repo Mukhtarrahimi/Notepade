@@ -30,6 +30,19 @@ def save_file():
     root.title(f"MY NOTEPAD - {file_location}")
 
 
+# Function: Save file as
+def save_as_file():
+    global current_file
+    file_location = asksaveasfilename(
+        defaultextension=".txt",
+        filetypes=[("Text files", "*.txt"), ("All files", "*.*")],
+    )
+    if not file_location:
+        return
+    current_file = file_location
+    save_file()
+
+
 def open_file():
     file_location = askopenfilename(
         filetypes=[("Text files", ".txt"), ("All files", "*.*")])
