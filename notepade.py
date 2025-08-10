@@ -17,15 +17,16 @@ def saveing_file():
 
 def open_file():
     file_location = askopenfilename(
-        filetypes=[("Text files", ".txt"), ("All files", "*.*")]
+        filetypes=[("Text files", ".txt"), ("All files", "*.*")])
     if not file_location:
         return
-    
+    text_edit.delete(1.0, tk.END)
+    with open(file_location, "r") as file_input:
+        text = file_input.read()
+        text_edit.insert(tk.END, text)
+    root.title(f"MY NOTEPAD - {file_location}")
         
-        
-        
-        
-        
+
 root = tk.Tk()
 root.title("MY NOTEPAD")
 root.rowconfigure(0, minsize=800)
