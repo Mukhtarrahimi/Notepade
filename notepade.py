@@ -30,7 +30,7 @@ def save_file():
     root.title(f"MY NOTEPAD - {file_location}")
 
 
-# Function: Save file as
+# Save file as
 def save_as_file():
     global current_file
     file_location = asksaveasfilename(
@@ -53,6 +53,21 @@ def open_file():
         text = file_input.read()
         text_edit.insert(tk.END, text)
     root.title(f"MY NOTEPAD - {file_location}")
+
+
+# undo funtion
+def undo_text():
+    text_edit.edit_undo()
+
+
+# redo function
+def redo_text():
+    text_edit.edit_redo()
+
+
+# copy function
+def copy_text():
+    text_edit.event_generate("<<Copy>>")
 
 
 root = tk.Tk()
